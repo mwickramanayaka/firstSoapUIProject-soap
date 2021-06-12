@@ -1445,17 +1445,37 @@ context.setProperty("Hello", new Hello(log, context, testRunner))
 testStep.run(testRunner, context)
 
 context.Hello.sayHello("Manul")
-</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f75d0360-e116-428d-828a-9a8f2e681920" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase2" searchProperties="true"><con:settings/><con:testStep type="groovy" name="CallHello" id="a56050db-89f0-48d2-bcff-8345a5f0493c"><con:settings/><con:config><script>project = testRunner.testCase.testSuite.project ;
-tcase = project.testSuites["TestSuite3"].testCases["TestCase1"] ; 
-hello = tcase.getTestStepByName("Hello");
-
-hello.run(testRunner, context)
-
-context.Hello.sayHello("Manul")</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="1cb3fadc-9ecc-4b4c-95ad-a496baa4234c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase3" searchProperties="true"><con:settings/><con:testStep type="request" id="a0ed1bf5-3fc9-43e5-b3ef-64c48b84094d" name="GetCountryISOCode"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CountryInfoServiceSoapBinding</con:interface><con:operation>CountryISOCode</con:operation><con:request name="GetCountryISOCode" id="eb686f84-dbf3-4072-8414-f2085beb2206"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.oorsprong.org/websamples.countryinfo">\r
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f75d0360-e116-428d-828a-9a8f2e681920" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase2" searchProperties="true"><con:settings/><con:testStep type="request" id="a0ed1bf5-3fc9-43e5-b3ef-64c48b84094d" name="GetCountryISOCode"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CountryInfoServiceSoapBinding</con:interface><con:operation>CountryISOCode</con:operation><con:request name="GetCountryISOCode" id="eb686f84-dbf3-4072-8414-f2085beb2206"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.oorsprong.org/websamples.countryinfo">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <web:CountryISOCode>\r
          <web:sCountryName>India</web:sCountryName>\r
       </web:CountryISOCode>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.oorsprong.org/websamples.countryinfo/CountryInfoServiceSoapType/CountryISOCodeRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="3257572e-1ea6-4212-b93e-e18523b90dd6"><con:settings/><con:config><script/></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>CountryName</con:name><con:value>TW</con:value></con:property><con:property><con:name>Name</con:name><con:value>I am in Project</con:value></con:property><con:property><con:name>DOB</con:name></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="ff4b4f67-8ed6-4446-932e-ce3c4b713a4a" name="Contains"><con:configuration><token>m:CountryISOCodeResult</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.oorsprong.org/websamples.countryinfo/CountryInfoServiceSoapType/CountryISOCodeRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="CallHello" id="a56050db-89f0-48d2-bcff-8345a5f0493c"><con:settings/><con:config><script>project = testRunner.testCase.testSuite.project ;
+tcase = project.testSuites["TestSuite3"].testCases["TestCase1"] ; 
+hello = tcase.getTestStepByName("Hello");
+
+hello.run(testRunner, context)
+
+context.Hello.sayHello("Manul")</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="1cb3fadc-9ecc-4b4c-95ad-a496baa4234c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase3" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="3257572e-1ea6-4212-b93e-e18523b90dd6"><con:settings/><con:config><script>project = testRunner.testCase.testSuite.project ;
+tcase = project.testSuites["TestSuite3"].testCases["TestCase2"] ; 
+tstep = tcase.getTestStepByName("GetCountryISOCode");
+def status = tstep.run(testRunner, context)
+def result = status.getStatus().toString();
+log.info ("   ----   "+result)
+
+
+
+/*
+def status = testRunner.runTestStepByName("GetCountryISOCode")
+log.info ("   ---- "+status)
+def result = status.getStatus().toString();
+log.info ("   ---- "+result)
+
+if(result == "OK"){
+	log.info ("   ---- Test Passed ")
+}else{
+	log.info ("   ---- Test Failed ")
+}
+*/</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>CountryName</con:name><con:value>TW</con:value></con:property><con:property><con:name>Name</con:name><con:value>I am in Project</con:value></con:property><con:property><con:name>DOB</con:name></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
