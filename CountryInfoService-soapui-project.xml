@@ -1478,4 +1478,21 @@ if(result == "OK"){
 }else{
 	log.info ("   ---- Test Failed ")
 }
-*/</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>CountryName</con:name><con:value>TW</con:value></con:property><con:property><con:name>Name</con:name><con:value>I am in Project</con:value></con:property><con:property><con:name>DOB</con:name></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+*/</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="de80a674-99ed-4806-92a4-d83bb1687e90" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase4" searchProperties="true"><con:settings/><con:testStep type="groovy" name="RunTestCase" id="2f040b80-7696-4f19-bbc0-5ee88e87b57f"><con:settings/><con:config><script>def tCase = testRunner.testCase.testSuite.testCases["TestCase2"]
+def prop = new com.eviware.soapui.support.types.StringToObjectMap()
+
+runner = tCase.run(null, false);
+
+log.info(" ----- " + runner.getStatus().toString())
+
+def testCases = context.testCase.testSuite.getTestCaseList() 
+
+testCases.each{
+log.info("----- " + it.name)
+
+if(it.name == "TestCase3"){
+	log.info ("----- This is Test Case 3")
+}
+}
+
+log.info (" Test Case Name is : " + testRunner.testCase.name)</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>CountryName</con:name><con:value>TW</con:value></con:property><con:property><con:name>Name</con:name><con:value>I am in Project</con:value></con:property><con:property><con:name>DOB</con:name></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
